@@ -1,0 +1,202 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background: #F8F8F8;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+header {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-evenly;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
+    background: #fff;
+    box-shadow: 0 0 4px #ddd;
+}
+
+.pupils .header {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+}
+
+.pupils .header span,
+.pupils .header span {
+    width: fit-content;
+    height: fit-content;
+    color: #707070;
+    font-weight: 500;
+    font-size: 21px;
+}
+
+.pupils .body {
+    width: fit-content;
+    height: fit-content;
+    margin-top: 2vh;
+}
+
+.pupils .body table {
+    width: fit-content;
+    height: fit-content;
+}
+
+th,
+td {
+    width: 5vw;
+    height: fit-content;
+    text-align: center;
+    padding: 3vh 3vw;
+    white-space: nowrap;
+}
+
+td a {
+    width: fit-content;
+    height: fit-content;
+    padding: 1vh 2vw;
+    background: var(--primary);
+    border: none;
+    border-radius: 2px;
+    box-shadow: 0 0 2px #ddd;
+    font-weight: 500;
+    color: #fff;
+}
+
+.classrooms_block td {
+    font-size: 17px;
+}
+
+td a:hover {
+    box-shadow: 0 0 0 3.5px var(--blueSky);
+    transition: .3s;
+}
+
+.add_block,
+.edit-profile {
+    width: 50%;
+    height: fit-content;
+    background: #fff;
+    position: absolute;
+    display: none;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 1vh auto;
+    padding-top: 2vh;
+    padding-bottom: .5vh;
+    padding-left: 2vw;
+    padding-right: 2vw;
+    top: 10vh;
+    left: 30vw;
+    box-shadow: 0 0 5px #ddd;
+}
+
+.add_head {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 3vh;
+    border-bottom: 1px solid #eee;
+}
+
+.add_head span {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.add_head .close {
+    width: fit-content;
+    height: fit-content;
+    font-size: 18px;
+    border: none;
+    background: none;
+    color: var(--primary);
+}
+
+form {
+    width: 100%;
+    height: fit-content;
+    display: block;
+    margin: 5vh auto;
+}
+
+form .block {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 1.5vh auto;
+}
+
+form .block .form-group {
+    width: 45%;
+    height: fit-content;
+    margin-top: 1vh;
+    padding: 1vh 1vw;
+    border: 1px solid #eee;
+}
+
+form .block .form-group i {
+    color: var(--primary);
+}
+
+input {
+    width: 90%;
+    height: 35px;
+    border: none;
+    background: none;
+}
+
+.form-group:hover {
+    transition: .5s;
+    border: none;
+    box-shadow: 0 0 0 3px var(--primary);
+}
+
+form button {
+    width: fit-content;
+    height: fit-content;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: inherit;
+    color: #fff;
+    padding: 1.5vh 4vw;
+    border: none;
+    border-radius: 3px;
+    background: var(--primary);
+    margin: 2vh auto;
+    box-shadow: 0 0 3px #ddd;
+}
+
+form button:hover {
+    box-shadow: 0 0 0 3px var(--blueSky);
+    transition: .5s;
+}
+
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    width: 100%;
+    background: var(--blueSky);
+    border-radius: 5px;
+}
+
+.add_block #note_registering_response {
+    width: fit-content;
+    height: fit-content;
+    display: none;
+    margin-top: 2vh;
+    padding: 1vh 1vw;
+    border-radius: 3px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    position: absolute;
+    bottom: 5%;
+}

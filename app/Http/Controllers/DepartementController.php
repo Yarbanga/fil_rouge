@@ -30,6 +30,7 @@ class DepartementController extends Controller
 	        'status'=>2,
 	    ]);
 	        Session::flash('message', 'vous ajoutez avec succes!'); 
-	        Session::flash('alert-class', 'alert-success text-center'); 
+	        Session::flash('alert-class', 'alert-success text-center');
+            return redirect()->route('message'); 
     }
 }

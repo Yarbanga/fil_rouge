@@ -9,10 +9,8 @@
             <ul class="list-unstyled navbar__list">
                 <li class="active has-sub">
                     <a class="js-arrow" href="">
-                        <i class="fas fa-tachometer-alt"></i>Tableau de bord</a>
-                    
-                </li>
-                
+                    <i class="fas fa-tachometer-alt"></i>Tableau de bord</a>                   
+                </li>                
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
                         <i class="fas fa-desktop"></i>Programme</a>
@@ -21,16 +19,14 @@
                             <a href="">Liste des classes</a>
                         </li>
                         <li>
-                            <a href="{{ url('classe') }}">Ajouter une classe</a>
-                        </li>
-                        
+                            <a href="{{ url('ufr') }}">Ajouter une classe</a>
+                        </li>                        
                     </ul>
                 </li>
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
                         <i class="fas fa-table"></i>Leçons</a>
-                    <ul class="list-unstyled navbar__sub-list js-sub-list">
-                        
+                    <ul class="list-unstyled navbar__sub-list js-sub-list">                       
                         <li>
                             <a href="">Ajouter une leçon</a>
                         </li>
@@ -38,8 +34,7 @@
                             <a href="">Ajouter une matière</a>
                         </li>
                     </ul>
-                </li>
-               
+                </li>               
                 <li class="has-sub">
                     <a class="js-arrow" href="#">
                         <i class="fas fa-desktop"></i>Exercice</a>
@@ -49,8 +44,7 @@
                         </li>
                         <li>
                             <a href="#">Ajouter exercice</a> 
-                        </li>
-                        
+                        </li>                       
                     </ul>
                 </li>
             </ul>

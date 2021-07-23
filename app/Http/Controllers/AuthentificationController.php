@@ -40,17 +40,17 @@ class AuthentificationController extends Controller
         return view('Professeurs.login');
     }
     public function content(){
-        return view('Professeurs/portials.content');
+        return view('Professeurs/partials.content');
     }
      public function footer(){
-        return view('Professeurs/portials.footer');
+        return view('Professeurs/partials.footer');
     }
      public function headerdesktop(){
-        return view('Professeurs/portials.headerdesktop');
+        return view('Professeurs/partials.headerdesktop');
     }
 
     public function sidebar(){
-        return view('Professeurs/portials.sidebar');
+        return view('Professeurs/partials.sidebar');
     }
     public function temp(){
         return view('layouts.temp');
@@ -64,7 +64,17 @@ class AuthentificationController extends Controller
     public function emploi(){
         return view('Emploi_temps');
     }
+    public function message(){
+        return view('message_recu');
+    }
 
+    public function message_info(){
+        return view('message_info');
+    }
+
+    public function ufr_liste(){
+        return view('ufrliste');
+    }
 
     /**
      * Show the form for creating a new resource.

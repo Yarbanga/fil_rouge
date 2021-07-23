@@ -53,47 +53,48 @@
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h5 id="exampleModalLabel">Ajouter</h5>
+                  <h5 id="exampleModalLabel">Ajouter un étudiant</h5>
                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                   </button>
                 </div>
                 <div class="modal-body">
-                  <form>
+                  <form method="POST" action="/Ajout_etudiant">
+                    {{csrf_field()}}
                     <div class="form-group">
                       <label for="recipient-name" class="col-form-label">nom:</label>
-                      <input type="text" class="form-control" id="recipient-name">
+                      <input type="text" name="name" class="form-control" id="recipient-name">
                     </div>
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">prenom:</label>
-                      <input type="text" class="form-control" id="recipient-name">
+                      <label for="recipient-name" class="col-form-label">prenoms:</label>
+                      <input type="text" name="prenoms" class="form-control" id="recipient-name">
                     </div>
                     <div class="form-group">
                       <label for="recipient-name" class="col-form-label">email:</label>
-                      <input type="email" class="form-control" id="recipient-name">
+                      <input type="email" name="email" class="form-control" id="recipient-name">
                     </div>
                     <div class="form-group">
                       <label for="recipient-name" class="col-form-label">date de naissance:</label>
-                      <input type="text" class="form-control" id="recipient-name">
-                    </div>
-                    <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">status:</label>
-                      <input type="text" class="form-control" id="recipient-name">
+                      <input type="date" name="naissance" class="form-control" id="recipient-name">
                     </div>
                     <div class="form-group">
                       <label for="recipient-name" class="col-form-label">Numero:</label>
-                      <input type="text" class="form-control" id="recipient-name">
+                      <input type="text" name="numero" class="form-control" id="recipient-name">
                     </div>
                     <div class="form-group">
                       <label for="recipient-name" class="col-form-label">N Matricule</label>
-                      <input type="text" class="form-control" id="recipient-name">
+                      <input type="text" name="matricule" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="form-group">
+                      <label for="recipient-name" class="col-form-label">Password</label>
+                      <input type="password" name="password" class="form-control" id="recipient-name">
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                      <button type="submit" class="btn btn-primary">Envoyez</button>
                     </div>
                   </form>
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                  <button type="button" class="btn btn-primary">Envoyer</button>
-                </div>
+                </div>  
               </div>
             </div>
           </div>
@@ -109,7 +110,7 @@
           <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
             <div class="icon-box bleu" data-aos="fade-up" data-aos-delay="200">
               <div class="icon"><i class="bx bx-file"></i></div>
-              <h4 class="title"><a href="">Lister</a></h4>
+              <h4 class="title"><a href="{{route('user.list')}}">Lister</a></h4>
               <p class="description text-justify">La liste totale des Etudiants</p>
             </div>
           </div>

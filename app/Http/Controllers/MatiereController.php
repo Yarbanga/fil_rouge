@@ -2,44 +2,40 @@
 
 namespace App\Http\Controllers;
 
-use App\Information;
-use App\User;
+use App\Matiere;
 use Illuminate\Http\Request;
 
-class InformationController extends Controller
+class MatiereController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function choixFiliere()
+    {
+        return view('choix_filiere');
+    }
+    public function filiere_store(Request $request)
     {
         $data=request()->validate([
-          'name' =>['required','string'],
-          'object'=>['required','string'],
-          'message'=>['required','string'],
+            'matiere'=>['required','string','max:20'],
         ]);
-        Information::create([
-           'name' =>$data['name'],
-           'object'=>$data['object'],
-           'message'=>$data['message'],
+        Matiere::create([
+            'matiere'=>$data['matiere'],
         ]);
-        return redirect()->route('message_info');
+        return redirect()->route('message_ufr');
     }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        $users= User::latest()->where('id', '!=', 2)
-                            ->where('status', 2)->paginate(5);
-        $nombres= User::latest()->where('id', '!=', 2)->where('status', 2);
-        return view('liste_ajout', compact('users', 'nombres'));
+    public function listematiere(){
+        $matieres=Matiere::all();
+        //$ufrs=Ufr::where('id', '=', $ufr)->get();
         
+        return view('filiere', compact('matieres' ));
     }
 
     /**
@@ -56,10 +52,10 @@ class InformationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Information  $information
+     * @param  \App\Matiere  $matiere
      * @return \Illuminate\Http\Response
      */
-    public function show(Information $information)
+    public function show(Matiere $matiere)
     {
         //
     }
@@ -67,10 +63,10 @@ class InformationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Information  $information
+     * @param  \App\Matiere  $matiere
      * @return \Illuminate\Http\Response
      */
-    public function edit(Information $information)
+    public function edit(Matiere $matiere)
     {
         //
     }
@@ -79,10 +75,10 @@ class InformationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Information  $information
+     * @param  \App\Matiere  $matiere
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Information $information)
+    public function update(Request $request, Matiere $matiere)
     {
         //
     }
@@ -90,10 +86,10 @@ class InformationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Information  $information
+     * @param  \App\Matiere  $matiere
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Information $information)
+    public function destroy(Matiere $matiere)
     {
         //
     }

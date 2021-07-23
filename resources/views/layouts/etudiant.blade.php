@@ -34,15 +34,15 @@
   </div>
   <header id="header" class="fixed-top">
     <div class="container d-flex align-items-center">
-      <a href="index.html" class="logo mr-auto">G-NOTES</a>
+      <a href="#" class="logo mr-auto">G-NOTES</a>
       <nav class="nav-menu d-none d-lg-block">
         <ul>
           <li class="active"><a href="index.html">Accueil</a></li>
-          <li><a href="{{('login')}}">Examen</a></li>
-          <li><a href="{{('login')}}">Devoir</a></li>
-          <li><a href="{{('login')}}">Reclamation</a></li>
-          <li><a href="{{('register')}}">S'incrire</a></li>
-          <li><a href="{{('login')}}">Se connecter</a></li>
+          <li><a href="/Inscp_Con">Examen</a></li>
+          <li><a href="/Inscp_Con">Devoir</a></li>
+          <li><a href="/Inscp_Con">Reclamation</a></li>
+          <li><a href="/Inscp_Con">S'incrire</a></li>
+          <li><a href="/Inscp_Con">Se connecter</a></li>
         </ul>
       </nav>
     </div>

@@ -29,7 +29,11 @@ class EtudiantController extends Controller
             'password' => Hash::make($data['password']),
             'status'=>5,
         ]);
+            return redirect()->route('message'); 
             Session::flash('message', 'vous ajoutez avec succes!'); 
             Session::flash('alert-class', 'alert-success text-center'); 
     }
+    // public function create_note(){       
+    //     return view('note');     
+    // }
 }

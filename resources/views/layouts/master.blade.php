@@ -235,8 +235,68 @@
                     </div>
                   </div>
                 </li>
+                <li>                 
+                  <a type="button" class="text-white" data-toggle="modal" data-target="#exampleModalLong">
+                  <i class="bx bx-user"></i> 
+                    Ajouter des agents
+                  </a>
+                  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        
+                        <div class="modal-body">
+                          <form action="#" method="POST">
+                            @csrf
+                            <div class="">
+                              
+                            <select class="option form-control" name="semestre">
+                              <option>Choisir le semestre</option >
+                              <option>Semestre1</option >
+                              <option>Semestre2</option>                       
+                            </select><br>
+                            <select class="option form-control" name="filiere" placeholder="Choisir votre ufr">
+                              <option>Choisir votre filière</option >
+                              <option>MPI</option >
+                              <option>INSSEA</option>  
+                              <option>ST</option >
+                              <option>SEG</option> 
+                              <option>ISEA</option >
+                              <option>SVT</option>  
+                              <option>LACS</option >
+                              <option>SJP</option>  
+                            </select><br>
+                            <select class="option form-control" name="matiere" placeholder="Choisir votre ufr">
+                              <option>Choisir votre filière</option >
+                              <option>Economie</option>  
+                              <option>Physique</option >
+                              <option>Economie</option> 
+                              <option>Chimie</option >
+                              <option>Informatique</option>  
+                              <option>Géographie</option >
+                              <option>Histoire</option>  
+                            </select><br>
+                              <div class="form-group">
+                                <div class="custom-file">
+                                  <input type="file" name="photo"  class="custom-file-input {{ $errors->has('photo') ? ' is-invalid': ' ' }}" id="validatedCustomFile">
+                                  <label class="custom-file-label" for="validatedCustomFile">Choisir une photo...</label>
+                                </div>
+                              </div>
+                              <textarea name="reclamation" id="" class="form-control" cols="30" rows="10">Entrée votre demande</textarea>   
+                            </div>
+                        </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                              <button type="submit" class="btn btn-primary">Confirmer</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                </li>
                 <li>
-                  <a href="#"><i class="bx bx-user"></i></i><span>Ajouter un agent</span></a>
+                  
                   <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">

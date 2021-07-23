@@ -43,7 +43,6 @@
                </a>
             </h1>
             <p>
-              
               <a class="dropdown-item text-danger" href="{{ route('logout') }}"onclick="event.preventDefault();document.getElementById('logout-form').submit();">Deconnexion</a>
               <a type="button" class="dropdown-item text-secondary mt-1" data-toggle="modal" data-target="#staticBackdrop">
                 Ajouter un Prof
@@ -61,7 +60,8 @@
                       </button>
                     </div>
                     <div class="modal-body">
-                      <form method="POST" action="{{route('prof.store')}}">
+                    <form method="POST" action="{{route('prof.store')}}">
+                        {{csrf_field()}}
                           <div class="form-group">
                             <label for="recipient-name" class="col-form-label">nom:</label>
                             <input type="text" name="name" class="form-control" id="recipient-name">
@@ -77,10 +77,6 @@
                           <div class="form-group">
                             <label for="recipient-name" class="col-form-label">date de naissance:</label>
                             <input type="date" name="naissance" class="form-control" id="recipient-name">
-                          </div>
-                          <div class="form-group">
-                            <label for="recipient-name" class="col-form-label">status:</label>
-                            <input type="text" name="status" class="form-control" id="recipient-name">
                           </div>
                           <div class="form-group">
                             <label for="recipient-name" class="col-form-label">Numero:</label>
@@ -112,55 +108,37 @@
             </p>
             <nav class="nav-menu" style="margin-top: -100px;">
               <ul>
-
-                <li class="active"><a href="#"><i class="icofont-university"></i>
-                  <span>Ajouter une ufr</span></a>
-                </li>
-                <li>
+                <li class="active">
                   <a type="button" data-toggle="modal" data-target="#infos" class="text-white">
-                    <i class="icofont-macbook"></i> 
-                    Ajouter une filiere
+                  <i class="icofont-university"></i> 
+                    Ajouter une ufr
                   </a>
                     <div class="modal" id="infos">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h4 class="modal-title">Choix de Filière</h4>
+                            <h4 class="modal-title">Choix de L'Ufr</h4>
                               <button type="button" class="close" data-dismiss="modal">
                                 <span>&times;</span>
                               </button>            
                             </div>
                             <div class="modal-body">
-                              <form action="#" method="post">
-                                @csrf
-                                <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text">Choisir de l'ufr
-                              </div>
-                                <select class="option form-control" name="classe" placeholder="">
-                                  <option disabled="disableb" selected="selected"></option>
-                                               
-                                </select> <br> 
-                              </div>
-                              <div class="input-group mt-2">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text">Choisir une matière</span>
-                              </div>
-                                <select class="option form-control" name="matiere" placeholder="Confirmer">
-                                  <option disabled="disableb" selected="selected"></option>
-                                             
-                                </select>
-                              
+                              <form action="{{route('ufr_store')}}" method="post">
+                                @csrf 
+                                <div>
+                                  <input type="text" class="form-control" name="ufr" placeholder="Choisir une Ufr"><br>
+                                  <!-- <input type="text" class="form-control" name="filiere" placeholder="Choisir une filière">                              -->
+                                </div>                               
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                                  <button type="submit" class="btn btn-primary">Confirmer</button>
+                                </div>
+                              </form>
                             </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                              <button type="submit" class="btn btn-primary">Confirmer</button>
-                            </div>
-                            </form>
                           </div>
                         </div>
-                      </div>
-                    </span></a>
+                    </div>
+                  </a>
                 </li>
                 <li>       
                   <a class="text-white" data-toggle="modal" data-target="#exampleModal">
@@ -171,7 +149,7 @@
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
                         <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLabel">Ajouter un étudiant</h5>
+                          <h5 class="modal-title" id="exampleModalLabel">Ajouter des module</h5>
                           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                           </button>
@@ -179,78 +157,58 @@
                         <div class="modal-body">
                           <form action="#" method="POST">
                             @csrf                  
-                            <div class="input-group">
-                              <div class="input-group-prepend">                        
+                            <div class=""> 
+                              
+                              <select class="option form-control" name="ufr" placeholder="Choisir votre ufr">
+                                <option>Choisir votre ufr</option >
+                                <option>MPI</option >
+                                <option>INSSEA</option>  
+                                <option>ST</option >
+                                <option>SEG</option> 
+                                <option>ISEA</option >
+                                <option>SVT</option>  
+                                <option>LACS</option >
+                                <option>SJP</option>  
+                              </select><br>
+                              <select class="option form-control" name="filiere" placeholder="Choisir votre ufr">
+                                <option>Choisir votre filière</option >
+                                <option>Economie</option>  
+                                <option>Physique</option >
+                                <option>Economie</option> 
+                                <option>Chimie</option >
+                                <option>Informatique</option>  
+                                <option>Géographie</option >
+                                <option>Histoire</option>  
+                              </select><br>
+                                <textarea name="reclamation" id="" class="form-control" cols="30" rows="10">Entrée votre demande</textarea>   
                               </div>
-                             <div>
-                              <input type="text" class="form-control" name="name" placeholder="Nom"><br>
-                              <select value="classe" class="option form-control" name="sexe">
-                                  <option disabled="disableb" selected="selected"></option>
-                                  <option value="classe" selected>Sexe</option >
-                                  <option>Masculin</option>
-                                  <option>Feminin</option>             
-                                </select> <br> 
-                              <input type="date" class="form-control" name="naissance" placeholder="Date_de_naissance"><br>
-                              <input type="email" class="form-control" name="email" placeholder="Address Mail" style="width: 225%"><br>
-                             </div>
-
-                             <div class="ml-5">
-                              <input type="text" class="form-control" name="prenoms" placeholder="Prénoms"><br>
-                              <select class="option form-control" name="classe">
-                                  <option disabled="disableb" selected="selected">Classes</option>
-                                             
-                                </select> <br> 
-                              <input type="text" class="form-control" name="matricule" placeholder="Matricule"><br>
-                             </div>
-
-                             <div>
-                                <select value="classe" class="option form-control" name="annee">
-                                  <option disabled="disableb" selected="selected"></option>
-                                  <option value="classe" selected>Année</option >
-                                               
-                                </select> <br> 
-                              <input type="password" class="form-control" name="password" placeholder="Mot de passe"><br>
-                              
-                             </div>
-
-                             <div class="ml-5">
-                               <select value="classe" class="option form-control" name="status">
-                                  <option disabled="disableb" selected="selected"></option>
-                                  <option value="Statut" selected>statut</option >
-                                  <option value="3">Etudiant</option>
-                                  <option value="2">Professeur</option>  
-                                  <option>Administration</option>
-                                              
-                                </select> <br> 
-                              <input type="password" class="form-control" name="password" placeholder="Confirmer mot de passe"><br>
-                              
-                             </div>
-                             
-                            </div>
-                              <br>
-                            </div>
-                            <div class="modal-footer">
-                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
-                              <button type="submit" class="btn btn-primary">Confirmer</button>
-                            </div>
-                          </form>
-                      </div>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
+                          <button type="submit" class="btn btn-primary">Confirmer</button>
+                        </div>            
+                      </form>
                     </div>
                   </div>
+                </div>
                  
                 </li>
                <!-- 
                + -->
                 <li>
-                   <a href="#"><i class="bx bx-file-blank"></i> 
-                    <span>Liste des ajouts</span></a>
+                   <a href="/ufr_show/{ufr}"><i class="bx bx-file-blank"></i> 
+                    <span>Liste des Ufr</span></a>
                 </li>
                 <li>
-                  <a type="button" data-toggle="modal" data-target="#infos" class="text-white">
+                   <a href="/liste/{matiere}"><i class="bx bx-file-blank"></i> 
+                    <span>Liste des Filières</span></a>
+                </li>
+                <li>
+                  <a href="" type="button" data-toggle="modal" data-target="#infos" class="text-white">
                     <i class="icofont-notebook"></i> 
-                    Gestioin des matieres
+                    liste des ajouts
                   </a>
-                    <div class="modal" id="infos">
+                    <!-- <div class="modal" id="infos">
                       <div class="modal-dialog">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -278,8 +236,7 @@
                                 <select class="option form-control" name="matiere" placeholder="Confirmer">
                                   <option disabled="disableb" selected="selected"></option>
                                               
-                                </select>
-                              
+                                </select>   
                             </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
@@ -289,7 +246,7 @@
                           </div>
                         </div>
                       </div>
-                    </span></a>
+                    </span></a> -->
                 </li>
                 
                 <li>
@@ -297,29 +254,50 @@
                     <i class="icofont-info"></i>
                     Reclamation
                   </a>
-                  <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                  <!-- <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                       <div class="modal-content">
-                        <div class="modal-header">
-                          <h5 class="modal-title" id="exampleModalLongTitle">Année scolaire</h5>
-                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                          </button>
-                        </div>
+                        
                         <div class="modal-body">
                           <form action="#" method="POST">
                             @csrf
-                            <div class="input-group">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text">Faite un choix</span>
+                            <div class="">
+                              
+                            <select class="option form-control" name="semestre">
+                              <option>Choisir le semestre</option >
+                              <option>Semestre1</option >
+                              <option>Semestre2</option>                       
+                            </select><br>
+                            <select class="option form-control" name="filiere" placeholder="Choisir votre ufr">
+                              <option>Choisir votre filière</option >
+                              <option>MPI</option >
+                              <option>INSSEA</option>  
+                              <option>ST</option >
+                              <option>SEG</option> 
+                              <option>ISEA</option >
+                              <option>SVT</option>  
+                              <option>LACS</option >
+                              <option>SJP</option>  
+                            </select><br>
+                            <select class="option form-control" name="matiere" placeholder="Choisir votre ufr">
+                              <option>Choisir votre filière</option >
+                              <option>Economie</option>  
+                              <option>Physique</option >
+                              <option>Economie</option> 
+                              <option>Chimie</option >
+                              <option>Informatique</option>  
+                              <option>Géographie</option >
+                              <option>Histoire</option>  
+                            </select><br>
+                              <div class="form-group">
+                                <div class="custom-file">
+                                  <input type="file" name="photo"  class="custom-file-input {{ $errors->has('photo') ? ' is-invalid': ' ' }}" id="validatedCustomFile">
+                                  <label class="custom-file-label" for="validatedCustomFile">Choisir une photo...</label>
+                                </div>
                               </div>
-                            <select class="option form-control" name="trimestre">
-                              <option disabled="disableb" selected="selected">Choisir l'année scolairek</option>
-                              <option>Trimestre</option >
-                              <option>Semestre</option>                       
-                            </select>
+                              <textarea name="reclamation" id="" class="form-control" cols="30" rows="10">Entrée votre demande</textarea>   
                             </div>
-                            </div>
+                        </div>
                             <div class="modal-footer">
                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Retour</button>
                               <button type="submit" class="btn btn-primary">Confirmer</button>
@@ -329,7 +307,7 @@
                       </div>
                     </div>
                   </div>
-                </li>
+                </li> -->
                 <div style="margin-top: 30%;"></div>          
               </ul>
             </nav>

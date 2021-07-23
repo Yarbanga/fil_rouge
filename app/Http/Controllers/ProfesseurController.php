@@ -29,6 +29,7 @@ class ProfesseurController extends Controller
         'password' => Hash::make($data['password']),
         'status'=>3,
       ]);
+        return redirect()->route('message'); 
         Session::flash('message', 'vous ajoutez avec succes!'); 
         Session::flash('alert-class', 'alert-success text-center'); 
     }    

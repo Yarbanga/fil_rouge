@@ -1,0 +1,40 @@
+body {
+    background-color: #eee
+}
+
+.modal {
+    background-image: linear-gradient(rgb(35, 79, 71) 0%, rgb(36, 121, 106) 100.2%)
+}
+
+.mt-100 {
+    margin-top: 100px
+}
+
+.icn {
+    border-radius: 1rem
+}
+
+.modal-title {
+    text-align: center;
+    font-size: 21px;
+    font-weight: 900;
+    color: #332d2d;
+    font-family: sans-serif
+}
+
+.add {
+    background-image: linear-gradient(rgb(35, 79, 71) 0%, rgb(36, 121, 106) 100.2%);
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 5rem;
+    border: none;
+    height: 44px;
+    box-shadow: 2px 2px 2px grey;
+    z-index: 1;
+    font-family: sans-serif
+}
+
+.no {
+    color: rgb(35, 79, 71);
+    background-color: white
+}

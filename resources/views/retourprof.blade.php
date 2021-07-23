@@ -22,20 +22,20 @@
         <div class="carousel-inner" role="listbox">
             <div class="carousel-item active">
                 <div class="testimonial_095_slide"> <a href="#"><span class="fa fa-twitter"></span></a>
-                    <p>Bnjour vous venez d'ajouter<a href="#">un nouvel</a>membre </p>
+                    <p>Bnjour votre enregistrement vient d'etre effectuerr<a href="#">Avec</a>succès Pour plus de sécuriter nous allons verifier votre inscription </p>
                     <h5><a href="#">G-notes</a></h5>
                 </div>
             </div>
             <div class="carousel-item">
                 <div class="testimonial_095_slide"> <a href="#"><span class="fa fa-twitter"></span></a>
-                    <p>Veillez envoyer un <a href="#">@mail de </a> confirmation y compris le code au nouvel membre ajouter à G-notes via ce lien.</p>
-                    <h5><a href="/password/reset">Envoie de mail</a></h5>
+                    <p>G-notes est une <a href="#">Application de </a> de gestion de note reserver uniquement qu'au étudiants de l'université Nazi boni de bobo Dioulasso.</p>
+                    <h5><a href="/Inscp_Con">Aller a la page de connexion</a></h5>
                 </div> 
             </div> 
             <div class="carousel-item">
                 <div class="testimonial_095_slide"> <a href="#"><span class="fa fa-twitter"></span></a>
-                    <p>Lorem ipsum dolor sit amet <a href="#">@consectetuer</a> adipiscing elit am nibh unc varius facilisis eros ed erat in in velit quis arcu ornare laoreet urabitur.</p>
-                    <h5><a href="{{route('dashbord')}}">Retournez a votre espace</a></h5>
+                    <p>Vous avez la possibiliter<a href="#">de vous connecter</a> sur votre page d'accueil afin de benéficier de toutes les information neccessaire sur la plateform G-notes.</p>
+                    <h5><a href="{{route('etudiant')}}">Aller à la page d'accueil</a></h5>
                 </div>
             </div>
         </div>
